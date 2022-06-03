@@ -1,11 +1,14 @@
 import os
+from dotenv import load_dotenv
 from sqlalchemy import Column, String, Integer, create_engine
 from flask_sqlalchemy import SQLAlchemy
 import json
 
+load_dotenv()
+
 database_name = "bookshelf"
 database_path = "postgresql://{}:{}@{}/{}".format(
-    "postgres", "4321thoiP$", "localhost:5432", database_name
+    "postgres", "", "localhost:5432", database_name
 )
 
 db = SQLAlchemy()
